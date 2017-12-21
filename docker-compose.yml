@@ -1,0 +1,33 @@
+version: "2"
+services:
+  mysql:
+    image: 'registry.cn-beijing.aliyuncs.com/stomz/mysql'
+    hostname: mysql
+    privileged: true
+    volumes:
+      - /e/docker/demo/mysql/data:/var/lib/mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+  node3:
+    image: 'registry.cn-beijing.aliyuncs.com/stomz/node3'
+    hostname: node3
+    privileged: true
+    depends_on:
+      - mysql
+  node4:
+      image: 'registry.cn-beijing.aliyuncs.com/stomz/node4'
+      hostname: node4
+      privileged: true
+      depends_on:
+        - mysql
+  nginx:
+    image: 'registry.cn-beijing.aliyuncs.com/stomz/nginx'
+    hostname: nginx
+    privileged: true
+    volumes:
+      - /e/docker/stomz/nginx/logs:/var/log/nginx
+    ports:
+      - 80:80
+    depends_on:
+      - node3
+      - node4
