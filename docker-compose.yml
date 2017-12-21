@@ -12,12 +12,16 @@ services:
     image: 'registry.cn-beijing.aliyuncs.com/stomz/node3'
     hostname: node3
     privileged: true
+    ports:
+      - 2003:2003
     depends_on:
       - mysql
   node4:
       image: 'registry.cn-beijing.aliyuncs.com/stomz/node4'
       hostname: node4
       privileged: true
+      ports:
+        - 2004:2004
       depends_on:
         - mysql
   nginx:
