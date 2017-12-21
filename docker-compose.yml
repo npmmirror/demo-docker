@@ -27,7 +27,7 @@ services:
     volumes:
       - /e/docker/stomz/nginx/logs:/var/log/nginx
     ports:
-      - 80:80
+      - 82:80
     depends_on:
       - node3
       - node4
