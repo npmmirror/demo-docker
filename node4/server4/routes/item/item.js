@@ -10,7 +10,7 @@ router.get('/getTargets', function(req, res, next) {
 	let date = "201712";
 
 	let sql = `SELECT 
-				AVG(MEDIAN_PRICE) MEDIAN_PRICE,GODS_NAME
+				AVG(MEDIAN_PRICE) MEDIAN_PRICE
 				FROM RDC_GODS_MONTH_PRICE A,PUB_MALLGOODSINFO B
 				WHERE A.BARCODE=B.BARCODE AND A.ORG_CODE=B.ORG_CODE AND A.BARCODE = '`+barcode+`' AND A.SALES_MONTH='`+date+`'` ;
 	if(city){
@@ -18,8 +18,8 @@ router.get('/getTargets', function(req, res, next) {
 	}
 	console.log(sql);
 	sqlClient.queryOne(sql).then((repData) => {
-		let v = repData.MEDIAN_PRICE;
-		let n = repData.GODS_NAME;
+		let v = "0";
+		let n = "a";
         let data;
 	    if(city&&city=='11210201'){
 	    	data = [
