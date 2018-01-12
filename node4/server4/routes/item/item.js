@@ -7,7 +7,7 @@ router.get('/getTargets', function(req, res, next) {
 	let city = req.query.city;
 	let barcode = req.query.barcode;
 	let now = new Date();
-	let date = "201712";
+	let date = "201711";
 
 	let sql = `SELECT 
 				AVG(MEDIAN_PRICE) MEDIAN_PRICE
@@ -85,7 +85,7 @@ router.get('/getCumsterData',function(req, res, next){
 	let city = req.query.city;
 	let barcode = req.query.barcode;
 	let now = new Date();
-    let date = "201712";
+    let date = "201711";
 
 	let sql = `SELECT MALE_18 V1, MALE_20 V2, MALE_30 V3, MALE_40 V4, MALE_50 V5
 			FROM RDC_GOODS_CONSUMER_MONTH
@@ -145,7 +145,7 @@ router.get('/getTobaccoData',function(req,res,next){
 	let city = req.query.city;
 	let barcode = req.query.barcode;
 	let now = new Date();
-    let date = "201712";
+    let date = "201711";
 
 	let sql = `SELECT MALE, FEMALE,GODS_NAME
 			FROM RDC_GOODS_CONSUMER_MONTH A,PUB_MALLGOODSINFO B
@@ -219,7 +219,7 @@ router.get('/getShopsMessage',function(req,res,next){
 	let city = req.query.city;
 	let barcode = req.query.barcode;
 	let now = new Date();
-    let date = "201712";
+    let date = "201711";
 
 	let sql = `SELECT SHOP_ID,SALE_AMT,SALE_MNY,SALE_NUM,GROSS_PROFIT,SHOP_NAME
 			FROM RDC_CUST_GOODS_MONTH
