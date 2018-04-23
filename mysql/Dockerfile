@@ -1,4 +1,4 @@
-FROM mysql
+FROM mysql:5.7.22
 #维护者信息
 LABEL maintainer="sunzhen <stomz@163.com>"
 
