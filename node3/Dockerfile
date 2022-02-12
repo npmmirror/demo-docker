@@ -1,7 +1,7 @@
 FROM node
 COPY ./server3 /home/node/app/server3
 WORKDIR /home/node/app/server3
-RUN npm install --registry=https://registry.npm.taobao.org
+RUN npm install --registry=https://registry.npmmirror.com
 CMD ["npm", "start"]
 
 #设置时区
